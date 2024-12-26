@@ -278,7 +278,7 @@ class PolymorphicQuerySet(QuerySet):
             elif hasattr(a, "get_source_expressions"):
                 for source_expression in a.get_source_expressions():
                     test___lookup(source_expression)
-            else:
+            elif a is not None:
                 assert "___" not in a.name, ___lookup_assert_msg
 
         for a in args:
